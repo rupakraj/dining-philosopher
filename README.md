@@ -15,3 +15,24 @@ Eating is not limited by the amount of spaghetti left: assume an infinite supply
 The problem is how to design a discipline of behavior (a concurrent algorithm) such that each philosopher won't starve; i.e., can forever continue to alternate between eating and thinking assuming that any philosopher cannot know when others may want to eat or think.
 
 Src: http://en.wikipedia.org/wiki/Dining_philosophers_problem See more there.
+
+
+For the solution I have used Java as a programming language.
+
+Class:  Dine - it has a main method.
+
+Class:  Philosopher - represent the philosopher, it contains the two objects to represent the chopistrics.
+          Methods
+              eat     - called when enter for eating
+              think   - called when enter for thinking
+              run     - overriden method for Thread class.
+            
+Class:  Chopstick - represent the chopistic available
+          Methods
+              take      - called when before occupied
+              release   - called when philosopher starts thinking
+              
+            Both methods are the synchronized method.
+            
+Enjoy Coding :) 
+
