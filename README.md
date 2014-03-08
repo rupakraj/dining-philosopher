@@ -1,5 +1,6 @@
 dining-philosopher
 ==================
+**Theory**
 
 In computer science, the dining philosophers problem is an example problem often used in concurrent algorithm design to illustrate synchronization issues and techniques for resolving them.
 
@@ -16,23 +17,42 @@ The problem is how to design a discipline of behavior (a concurrent algorithm) s
 
 Src: http://en.wikipedia.org/wiki/Dining_philosophers_problem See more there.
 
+**Documentation**
 
 For the solution I have used Java as a programming language.
 
+
+```
 Class:  Dine - it has a main method.
 
 Class:  Philosopher - represent the philosopher, it contains the two objects to represent the chopistrics.
           Methods
-              eat     - called when enter for eating
-              think   - called when enter for thinking
+              eat     - called when enter for eating.
+              think   - called when enter for thinking.
               run     - overriden method for Thread class.
             
-Class:  Chopstick - represent the chopistic available
+Class:  Chopstick - represent the chopistic available.
           Methods
-              take      - called when before occupied
-              release   - called when philosopher starts thinking
+              take      - called when before occupied.
+              release   - called when philosopher starts thinking.
               
             Both methods are the synchronized method.
-            
-Enjoy Coding :) 
+```
+
+**Running the program**
+
+Compile
+```
+                    javac Dine.java
+```
+
+Run 
+```
+                    java Dine
+```
+
+
+Enjoy Coding **:) **
+
+
 
