@@ -17,7 +17,7 @@ public class Dine{
 		philosophers[1] = new Philosopher("P: 1 - ", chopistics[1], chopistics[2]);
 		philosophers[2] = new Philosopher("P: 2 - ", chopistics[2], chopistics[3]);
 		philosophers[3] = new Philosopher("P: 3 - ", chopistics[3], chopistics[4]);
-		philosophers[4] = new Philosopher("P: 4 - ", chopistics[4], chopistics[0]);
+		philosophers[4] = new Philosopher("P: 4 - ", chopistics[0], chopistics[4]);
 
 		for(int i=0;i<philosophers.length;i++){
 			Log.msg("Thred "+ i);
