@@ -48,14 +48,14 @@ class Philosopher extends Thread
 		if(! _leftChopistick.used){
 			if(!_rightChopistick.used){
 				_leftChopistick.take();
-				_leftChopistick.take();
+				_rightChopistick.take();
 
 				Log.msg(_name + " : Eat");
 				
 				Log.Delay(1000);
 
-				_leftChopistick.release();
-		 		_rightChopistick.release();
+				_rightChopistick.release();
+		 		_leftChopistick.release();
 			}
 		}		
 		think();
