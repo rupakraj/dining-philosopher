@@ -3,7 +3,7 @@ public class Dine{
 
 		int rounds=10;
 
-		Log.msg(String.valueOf(x));
+		Log.msg(String.valueOf(rounds));
  
 		Chopstick[] chopistics = new Chopstick[5];
 
