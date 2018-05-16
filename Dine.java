@@ -1,9 +1,9 @@
 public class Dine{
 	public static void main(String[] args){
 
-		int x=10;
+		int rounds=10;
 
-		Log.msg(String.valueOf(x));
+		Log.msg(String.valueOf(rounds));
  
 		Chopstick[] chopistics = new Chopstick[5];
 
@@ -13,14 +13,14 @@ public class Dine{
 		}
 		Philosopher[] philosophers = new Philosopher[5];
 		//for(i=0; i<philosophers.length; i++){
-		philosophers[0] = new Philosopher("P: 0 - ", chopistics[0], chopistics[1]);
-		philosophers[1] = new Philosopher("P: 1 - ", chopistics[1], chopistics[2]);
-		philosophers[2] = new Philosopher("P: 2 - ", chopistics[2], chopistics[3]);
-		philosophers[3] = new Philosopher("P: 3 - ", chopistics[3], chopistics[4]);
-		philosophers[4] = new Philosopher("P: 4 - ", chopistics[0], chopistics[4]);
+		philosophers[0] = new Philosopher("P: 0 - ", chopistics[0], chopistics[1], rounds);
+		philosophers[1] = new Philosopher("P: 1 - ", chopistics[1], chopistics[2], rounds);
+		philosophers[2] = new Philosopher("P: 2 - ", chopistics[2], chopistics[3], rounds);
+		philosophers[3] = new Philosopher("P: 3 - ", chopistics[3], chopistics[4], rounds);
+		philosophers[4] = new Philosopher("P: 4 - ", chopistics[0], chopistics[4], rounds);
 
 		for(int i=0;i<philosophers.length;i++){
-			Log.msg("Thred "+ i);
+			Log.msg("Thread "+ i + " has started");
 			Thread t= new Thread( philosophers[i]);
 			t.start();
 		}
@@ -35,12 +35,14 @@ class Philosopher extends Thread
 
 	private String _name;
 	private int _state;
+	private int _rounds;
 
-	public Philosopher ( String name, Chopstick _left, Chopstick _right){
+	public Philosopher ( String name, Chopstick _left, Chopstick _right, int rounds){
 		this._state = 1;
 		this._name = name;
 		_leftChopistick = _left;
 		_rightChopistick = _right;
+		_rounds = rounds;
 	}
  
 	public void eat()
@@ -69,7 +71,7 @@ class Philosopher extends Thread
 	}
 
 	public void run(){
-		for(int i=0; i<=10; i++){
+		for(int i=0; i<=_rounds; i++){
 			eat();
 		}
 	}
